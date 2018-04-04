@@ -1,5 +1,5 @@
 ;==============================================================
-; SEGA MEGA DRIVE/GENESIS - HELLO WORLD SAMPLE
+; SEGA MEGA DRIVE/GENESIS - DEMO 1 - HELLO WORLD SAMPLE
 ;==============================================================
 ; by Big Evil Corporation
 ;==============================================================
@@ -224,10 +224,6 @@ size_tile_b				equ 0x20
 size_tile_w				equ size_tile_b/size_word
 size_tile_l				equ size_tile_b/size_long
 
-; Total number of glyphs in the font
-; (H, E, L, O, W, R, D and SPACE)
-num_font_glyphs			equ 0x8
-
 ; Hello World draw position (in tiles)
 text_pos_x				equ 0x08
 text_pos_y				equ 0x10
@@ -290,7 +286,7 @@ Palette:
 ; The 8x8 pixel graphics tiles that describe the font.
 ; We only need to specify glyphs for "HELO WRD" since they're reusable.
 ; 'SPACE' is first, which is unneccessary but it's a good teaching tool for
-; why we leave the first tile in memory blank (try commenting it out
+; why we leave the first tile in memory blank (try changing it
 ; and see what happens!).
 ;==============================================================
 ; 0 = transparent pixel
@@ -393,6 +389,7 @@ tile_id_o		equ 0x4
 tile_id_w		equ 0x5
 tile_id_r		equ 0x6
 tile_id_d		equ 0x7
+tile_count		equ 0x8	; Last entry is just the count
 
 ;==============================================================
 ; CODE ENTRY POINT
@@ -455,7 +452,7 @@ CPU_EntryPoint:
 	
 	; Write the font glyph tiles to VRAM
 	lea    CharacterSpace, a0					; Move the address of the first graphics tile into a0
-	move.w #(num_font_glyphs*size_tile_l)-1, d0	; Loop counter = 8 longwords per tile * num tiles (-1 for DBRA loop)
+	move.w #(tile_count*size_tile_l)-1, d0		; Loop counter = 8 longwords per tile * num tiles (-1 for DBRA loop)
 	@CharLp:									; Start of loop
 	move.l (a0)+, vdp_data						; Write tile line (4 bytes per line), and post-increment address
 	dbra d0, @CharLp							; Decrement d0 and loop until finished (when d0 reaches -1)
