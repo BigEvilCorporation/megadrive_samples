@@ -149,7 +149,7 @@ ROM_Start:
 ; background palette/colour index, whether or not the display
 ; is on, and clears initial values for things like DMA.
 ;
-; In this demo, we're paeticularly interested in registers 0xB
+; In this demo, we're particularly interested in registers 0xB
 ; and 0xD, which specify the address of the horizontal scroll
 ; table, and the scroll mode (per-page, per-cell, or per-pixel).
 ;==============================================================
