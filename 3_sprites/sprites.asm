@@ -181,8 +181,8 @@ vdp_screen_height		equ 0x00F0
 
 ; The plane width and height (in tiles)
 ; according to VDP register 0x10 (see table above)
-vdp_plane_width			equ 0x28
-vdp_plane_height		equ 0x1E
+vdp_plane_width			equ 0x40
+vdp_plane_height		equ 0x20
 
 ; The size of the sprite plane (512x512 pixels)
 ;
@@ -657,6 +657,9 @@ CPU_Exception:
 ;==============================================================
 
 VDP_WriteTMSS:
+
+	; Poke the TMSS to show "LICENSED BY SEGA..." message and allow us to
+	; access the VDP (or it will lock up on first access).
 	move.b hardware_ver_address, d0			; Move Megadrive hardware version to d0
 	andi.b #0x0F, d0						; The version is stored in last four bits, so mask it with 0F
 	beq    @SkipTMSS						; If version is equal to 0, skip TMSS signature

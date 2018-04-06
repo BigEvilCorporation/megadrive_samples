@@ -200,8 +200,8 @@ vdp_screen_height		equ 0x00F0
 
 ; The plane width and height (in tiles)
 ; according to VDP register 0x10 (see table above)
-vdp_plane_width			equ 0x28
-vdp_plane_height		equ 0x1E
+vdp_plane_width			equ 0x40
+vdp_plane_height		equ 0x20
 
 ; Hardware version address
 hardware_ver_address	equ 0x00A10001
@@ -226,7 +226,7 @@ size_tile_l				equ size_tile_b/size_long
 
 ; Hello World draw position (in tiles)
 text_pos_x				equ 0x08
-text_pos_y				equ 0x10
+text_pos_y				equ 0x04
 
 ;==============================================================
 ; VRAM WRITE MACROS
