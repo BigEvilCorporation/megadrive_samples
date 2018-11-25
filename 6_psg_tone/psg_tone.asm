@@ -10,16 +10,16 @@
 ; I recommend reading and understanding the Sprites sample first.
 ;
 ; To assemble this program with ASM68K.EXE:
-;    ASM68K.EXE /p psg.asm,psg.bin,psg.map,psg.lst
+;    ASM68K.EXE /p psg_tone.asm,psg_tone.bin,psg_tone.map,psg_tone.lst
 ;
 ; To assemble this program with SNASM68K.EXE:
-;    SNASM68K.EXE /p psg.asm,psg.map,psg.lst,psg.bin
+;    SNASM68K.EXE /p psg_tone.asm,psg_tone.map,psg_tone.lst,psg_tone.bin
 ;
-; psg.asm = this source file
-; psg.bin = the binary file, fire this up in your emulator!
-; psg.lst = listing file, shows assembled addresses alongside
+; psg_tone.asm = this source file
+; psg_tone.bin = the binary file, fire this up in your emulator!
+; psg_tone.lst = listing file, shows assembled addresses alongside
 ;           your source code, open in a text editor
-; psg.map = symbol map file for linking (unused)
+; psg_tone.map = symbol map file for linking (unused)
 ;==============================================================
 
 ;==============================================================
