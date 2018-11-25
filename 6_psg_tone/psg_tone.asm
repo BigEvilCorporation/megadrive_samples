@@ -1,10 +1,10 @@
 ;==============================================================
-; SEGA MEGA DRIVE/GENESIS - DEMO 5 - PSG TONE SAMPLE
+; SEGA MEGA DRIVE/GENESIS - DEMO 6 - PSG TONE SAMPLE
 ;==============================================================
 ; by Big Evil Corporation
 ;==============================================================
-; A small, discreet, and complete PSG Tone sample, with a healthy
-; dose of comments and explanations for beginners.
+; A small, discreet, and complete 1-channel PSG Tone sample,
+; with a healthy dose of comments and explanations for beginners.
 ; Runs on genuine hardware, and (hopefully) all emulators.
 ;
 ; I recommend reading and understanding the Sprites sample first.
@@ -25,10 +25,10 @@
 ;==============================================================
 ; Usage
 ;==============================================================
-; LEFT = Increase frequency
-; RIGHT = Decrease frequency
-; UP = Increase volume
-; DOWN = Decrease volume
+; LEFT = Increase frequency of channel 0
+; RIGHT = Decrease frequency of channel 0
+; UP = Increase volume of channel 0
+; DOWN = Decrease volume of channel 0
 ;==============================================================
 
 ;==============================================================
