@@ -427,7 +427,7 @@ INT_VInterrupt:
 	move.w d1, ram_psg_frequency
 
 	; Write new frequency to PSG channel 0
-	move.b #0x1, d0
+	move.b #0x0, d0
 	jsr    PSG_SetFrequency
 
 	; Restore gamepad from backup
@@ -460,7 +460,7 @@ INT_VInterrupt:
 	move.b d1, ram_psg_volume
 
 	; Write new volume to PSG channel 0
-	move.b #0x1, d0
+	move.b #0x0, d0
 	jsr    PSG_SetVolume
 
 	rte
